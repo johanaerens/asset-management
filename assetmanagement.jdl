@@ -1,0 +1,55 @@
+
+entity Asset {
+  number String
+  brand String
+  model String
+  serialNumber String
+  purchaseDate Instant
+  warantDate Instant
+  comments String
+  status Status
+}
+
+entity Employee {
+  firstName String
+  lastName String
+  email String
+  employeeNumber String
+  phoneNumber String
+  hireDate Instant
+  language Language
+}
+
+entity AssetHistory {
+  startDate Instant
+  endDate Instant
+}
+
+enum Language {
+  FRENCH, ENGLISH, SPANISH
+}
+enum Status {
+  IN_USE, SOLD, NOT_WORKING, NEW
+}
+
+relationship OneToMany {
+  Employee to Asset{employee}
+}
+
+relationship OneToOne {
+  AssetHistory{asset} to Asset
+  AssetHistory{employee} to Employee
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+//paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

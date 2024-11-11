@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20241110111538"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "number",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "brand",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "model",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serialNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purchaseDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "warantDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "IN_USE,SOLD,NOT_WORKING,NEW"
+    }
+  ],
+  "name": "Asset",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
